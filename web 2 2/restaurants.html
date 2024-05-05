@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Restaurants| YumYumGo</title>
+<link rel="stylesheet" href="styles.css">
+
+<style>
+
+
+
+.breadcrumbs-container {
+  padding-left: 20px; 
+  padding-top: 10px; 
+  background-color:#6c4675 ; 
+}
+
+
+.breadcrumbs {
+  list-style: none;
+  padding: 0;
+  margin: 0; 
+}
+
+.breadcrumbs li {
+  display: inline;
+  margin-right: 5px; 
+}
+
+.breadcrumbs a{
+  color: #5c3c64; 
+  text-decoration: underline; 
+}
+
+.breadcrumbs .current {
+  text-decoration: none; 
+  color: #e5c6bd;
+}
+
+
+body {
+  background-color: #fbfbe3; 
+
+}
+.sort-section {
+  display: flex;
+  justify-content: flex-end; 
+  padding-right: 20px; 
+  
+  background-color: #6c4675;
+  padding: 20px 0; 
+  color: white;
+}
+.sort-container h3 {
+  text-align: center;
+    color:#e5c6bd; 
+    margin-top: 0; 
+}
+.sort-container {
+  margin: 0 auto; 
+}
+
+#sort-options {
+  background-color: #e5c6bd; 
+  color:#5c3c64; 
+  border: 1px solid #fff; 
+  padding: 10px 20px; 
+  font-size: 1rem; 
+  border-radius: 5px; 
+}
+
+
+#sort-options option {
+  background-color:beige; 
+}
+
+
+.save-order {
+  background-color: #e5c6bd; 
+  color:#5c3c64; 
+  border: 1px solid #fff; 
+  padding: 10px 20px; 
+  margin-top: 20px;
+  font-size: 1rem; 
+  border-radius: 5px; 
+  text-decoration: none !important;
+}
+.category-container {
+  margin-bottom: 2rem; 
+}
+
+.section-title {
+  text-align: center; 
+  width: 100%; 
+  display: block; 
+  margin-top: 20px; 
+  margin-bottom: 20px; 
+  font-size: 35px;
+  color:#5c3c64;
+}
+
+.meal-container {
+
+  display: flex;
+  justify-content: space-between; 
+  align-items: flex-start; 
+  flex-wrap: wrap;
+
+}
+
+
+.meal-item img {
+
+  width: 100%; 
+  height: 200px; 
+  object-fit: cover; 
+  border: 2px solid #5c3c64; 
+  border-radius: 8px; 
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1); 
+    margin-bottom: 10px; 
+   
+}
+
+
+.meal-item {
+  color: #33013f;
+ 
+  padding: 10px; 
+  flex: 0 1 30%; 
+  margin: 10px; 
+  box-sizing: border-box;
+  background-color: blanchedalmond;
+  width: calc(33.333% - 20px); 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+
+</style>
+
+</head>
+<body>
+<header>
+
+
+
+  <div id="logo"><img src="logo4.jpg" alt="YumYumGo"></div>
+  <nav id="nav-menu">
+    
+    <a href="index.html" accesskey="h">Home</a>
+    <a href="owner-dashboard.html "accesskey="o">Owner's Dashboard</a>
+    <a href="customer-dashboard.html"accesskey="c">Customer's Dashboard</a>
+    <a href="restaurants.html"accesskey="r">Restaurants</a>
+ 
+  </nav>
+  
+</header>
+<div class="breadcrumbs-container">
+  <ul class="breadcrumbs">
+    <li><a href="index.html">Home</a></li>
+    <li class="current">Restaurants</li>
+  </ul>
+</div>
+
+<section class="sort-section">
+  <div class="sort-container">
+    <h3>Sort by:</h3>
+    <select name="sort-options" id="sort-options">
+      <optgroup label="Sort by Price">
+        <option value="price-low-high">Price Low to High</option>
+        <option value="price-high-low">Price High to Low</option>
+      </optgroup>
+      <optgroup label="Sort by Name">
+        <option value="name-a-z">Name A to Z</option>
+        <option value="name-z-a">Name Z to A</option>
+      </optgroup>
+    </select>
+    <br>
+    <br><br>
+    <center class="save-order-container">
+      <a id="cart-btn" class="save-order" href="#">My Cart</a>
+    </center>
+  </div>
+</section>
+
+<section class="appetizers-section">
+<h2 class="section-title">Appetizers</h2>
+  <div id="appetizers-container" class="Appetizers meal-container">
+    <!-- js will load the meals -->
+<br>
+  </div>
+</section>
+
+
+
+<section id="main-course-section">
+  <h2 class="section-title">Main Course</h2>
+  <div id="main-course-container" class="Main-Course meal-container">
+ 
+<!-- <div class="meal-item">
+    <img src="Hamburger-and-french-fries-paper-box.webp" alt="Hamburger-and-french-fries">
+    <h3>Burger</h3>
+        <p>A juicy beef patty with cheddar, lettuce, tomato, onion, and pickles on a toasted brioche bun, finished with our signature sauce. Pure burger bliss in every bite.</p>
+        <p class="calorie-info">Calories: 1200 kcal</p>
+    <p class="price-info">30SR</p>
+    <div class="quantity-selector">
+      <label for="item-quantity">Quantity:</label>
+     
+      <button type="button" class="minus-btn" aria-label="Decrease quantity">-</button>
+      <input type="number" id="item-quantity" name="item-quantity" value="1" min="1" class="quantity-input">
+      <button type="button" class="plus-btn" aria-label="Increase quantity">+</button>
+      
+     
+    </div>
+    <div class="add-to-cart">
+      <input type="checkbox" id="add-item-to-cart" name="add-item-to-cart">
+      <label for="add-item-to-cart"> <a href="CartPage.html" >Add to cart</a></label>
+    </div>
+    <br>
+  </div>
+
+
+    <div class="meal-item">
+      <img src="FAW-recipes-pasta-sausage-basil-and-mustard-hero-06-cfd1c0a2989e474ea7e574a38182bbee.jpeg" alt="Pasta">
+      <h3>Pasta</h3>
+      <p>pasta coated in a rich, savory marinara sauce, sprinkled with freshly grated Parmesan and basil leaves. A simple yet profoundly satisfying dish that comforts the soul.</p>
+      <p class="calorie-info">Calories: 645 kcal</p>
+  <p class="price-info">25SR</p>
+  <div class="quantity-selector">
+    <label for="item-quantity">Quantity:</label>
+  
+    <button type="button" class="minus-btn" aria-label="Decrease quantity">-</button>
+    <input type="number" id="item-quantity" name="item-quantity" value="1" min="1" class="quantity-input">
+    <button type="button" class="plus-btn" aria-label="Increase quantity">+</button>
+    
+   
+  </div>
+  <div class="add-to-cart">
+    <input type="checkbox" id="add-item-to-cart" name="add-item-to-cart">
+    <label for="add-item-to-cart"> <a href="CartPage.html" >Add to cart</a></label>
+  </div>
+  <br>
+</div>
+
+  <div class="meal-item">
+    <img src="__opt__aboutcom__coeus__resources__content_migration__simply_recipes__uploads__2019__09__easy-pepperoni-pizza-lead-3-1024x682-583b275444104ef189d693a64df625da.jpg" alt="Pizza">
+    <h3>Pizza</h3>
+    <p>Our hand-tossed crust topped with zesty tomato sauce, mozzarella, pepperoni, bell peppers, onions, mushrooms, and olives, baked to golden perfection. A feast for the senses.</p>
+    <p class="calorie-info">Calories: 1500 kcal</p>
+<p class="price-info">35SR</p>
+<div class="quantity-selector">
+  <label for="item-quantity">Quantity:</label>
+  
+  <button type="button" class="minus-btn" aria-label="Decrease quantity">-</button>
+  <input type="number" id="item-quantity" name="item-quantity" value="1" min="1" class="quantity-input">
+  <button type="button" class="plus-btn" aria-label="Increase quantity">+</button>
+  
+ 
+</div>
+<div class="add-to-cart">
+  <input type="checkbox" id="add-item-to-cart" name="add-item-to-cart">
+  <label for="add-item-to-cart"> <a href="CartPage.html" >Add to cart</a></label>
+</div> -->
+  </div>
+</section>
+
+
+<section id="desserts-section">
+  <h2 class="section-title">Desserts</h2>
+  <div id="desserts-container" class="Desserts meal-container">
+<!-- <div class="meal-item">
+    <img src="homemade-chocolate-ice-cream-recipe-7.jpg" alt="Ice cream">
+    <h3>Ice cream</h3>
+        <p>Indulge in scoops of creamy, smooth ice cream, available in a variety of classic and innovative flavors to satisfy your sweet tooth.</p>
+        <p class="calorie-info">Calories: 120kcal</p>
+    <p class="price-info">5SR</p>
+    <div class="quantity-selector">
+      <label for="item-quantity">Quantity:</label>
+      
+      <button type="button" class="minus-btn" aria-label="Decrease quantity">-</button>
+      <input type="number" id="item-quantity" name="item-quantity" value="1" min="1" class="quantity-input">
+      <button type="button" class="plus-btn" aria-label="Increase quantity">+</button>
+      
+    </div>
+    <div class="add-to-cart">
+      <input type="checkbox" id="add-item-to-cart" name="add-item-to-cart">
+      <label for="add-item-to-cart"> <a href="CartPage.html" >Add to cart</a></label>
+    </div>
+  </div>
+
+    <div class="meal-item">
+      <img src="BAKERY-STYLE-CHOCOLATE-CHIP-COOKIES-9-637x637-1.jpg" alt="Cookies">
+      <h3>COOKIES</h3>
+      <p>Bite into our freshly baked cookies, brimming with chocolate chips and a hint of vanilla. A perfect blend of crispy edges and a chewy center.</p>
+      <p class="calorie-info">Calories: 300kcal</p>
+  <p class="price-info">15SR</p>
+  <div class="quantity-selector">
+    <label for="item-quantity">Quantity:</label>
+    
+    <button type="button" class="minus-btn" aria-label="Decrease quantity">-</button>
+    <input type="number" id="item-quantity" name="item-quantity" value="1" min="1" class="quantity-input">
+    <button type="button" class="plus-btn" aria-label="Increase quantity">+</button>
+    
+    
+  </div>
+  <div class="add-to-cart">
+    <input type="checkbox" id="add-item-to-cart" name="add-item-to-cart">
+    <label for="add-item-to-cart"> <a href="CartPage.html" >Add to cart</a></label>
+  </div>
+
+</div>
+<div class="meal-item">
+  <img src="best-black-bean-brownies-recipe-4.jpg" alt="Brownies">
+  <h3>Brownies</h3>
+    <p> Enjoy our rich, chocolatey brownies with a dense, fudgy core and crackly top. Each bite is a decadent delight.    </p>
+    <p class="calorie-info">Calories: 350kcal</p>
+<p class="price-info">10SR</p>
+<div class="quantity-selector">
+  <label for="item-quantity">Quantity:</label>
+  <button type="button" class="minus-btn" aria-label="Decrease quantity">-</button>
+  <input type="number" id="item-quantity" name="item-quantity" value="1" min="1" class="quantity-input">
+  <button type="button" class="plus-btn" aria-label="Increase quantity">+</button>
+  
+</div>
+
+
+
+
+<div class="add-to-cart">
+ 
+  <input type="checkbox" id="add-item-to-cart" name="add-item-to-cart">
+ 
+  <label for="add-item-to-cart"> <a href="CartPage.html" >Add to cart</a></label>
+</div>
+<br>
+  </div> -->
+  </div>
+</section>
+</div>
+<footer>
+  <p>&copy; 2024 YumYumGo</p>
+  <p>Phone: 123-456-7890</p>
+  <p>Email: info@YumYumGo.com</p>
+  <div id="social-media-icons">
+  
+    <div> <button id="theme-toggle">
+      <img src="Vector (5).png" alt="Switch Theme">
+    </button>
+    <a href="https://www.instagram.com/yum.yumgo?igsh=ajQ1N3NqcWxuMXhy&utm_source=qr"><img   src="Vector.png" alt="Instagram APP" /></a>
+          <a href="https://www.linkedin.com"><img src="linkedin-3-xxl.png" alt="LinkedIn APP" /></a>
+          <a href="https://twitter.com/i/flow/login"><img src="Vector (1).png" alt="X APP" /></a>
+        </div>
+  </div>
+</footer>
+<script src="javaScript.js"></script>
+</body>
+</html>
+
+<!-- load Appetizers Meals -->
+<script>
+  const appetizers = document.getElementById('appetizers-container');
+  const mainCourse = document.getElementById("main-course-container");
+  const desserts = document.getElementById("desserts-container");
+  // const cuisines = JSON.parse(localStorage.getItem("cuisines"));
+  const cuisines = [
+    {
+      section: "appetizers",
+      photo: "94-949210_nachos-and-salsa-png-png-transparent-download-appetizers.png",
+      name: "Nachos",
+      description: "A crunchy, colorful delight. Our tortilla chips come smothered in melted cheeses, topped with jalapeños, olives, tomatoes, and onions, and served with guacamole, salsa, and sour cream for dipping.",
+      calories: 650,
+      price: 19.99
+    },
+    {
+      section: "appetizers",
+      photo: "crispy-mozzarella-sticks-136463-1.jpg",
+      name: "mozzarella sticks",
+      description: "Crispy on the outside, gooey on the inside. These golden sticks are coated in herbed breadcrumbs and served with our rich marinara sauce—a cheesy treat that’s hard to beat.",
+      calories: 400,
+      price: 15
+    },
+    {
+      section: "appetizers",
+      photo: "mcdonalds-Chicken-McNuggets-6-pieces-2_1-3-product-tile-desktop.jpg",
+      name: "chicken nuggets",
+      description: "Perfectly seasoned and breaded chicken breast pieces, fried to a crispy golden perfection. Enjoy with your choice of honey mustard, barbecue, or ranch dipping sauces.",
+      calories: 350,
+      price: 10
+    },
+    {
+      section: "main course",
+      photo: "Hamburger-and-french-fries-paper-box.webp",
+      name: "Burger",
+      description: "A juicy beef patty with cheddar, lettuce, tomato, onion, and pickles on a toasted brioche bun, finished with our signature sauce. Pure burger bliss in every bite.",
+      calories: 1200,
+      price: 30
+    },
+    {
+      section: "main course",
+      photo: "FAW-recipes-pasta-sausage-basil-and-mustard-hero-06-cfd1c0a2989e474ea7e574a38182bbee.jpeg",
+      name: "Pasta",
+      description: "pasta coated in a rich, savory marinara sauce, sprinkled with freshly grated Parmesan and basil leaves. A simple yet profoundly satisfying dish that comforts the soul.",
+      calories: 645,
+      price: 25
+    },
+    {
+      section: "main course",
+      photo: "__opt__aboutcom__coeus__resources__content_migration__simply_recipes__uploads__2019__09__easy-pepperoni-pizza-lead-3-1024x682-583b275444104ef189d693a64df625da.jpg",
+      name: "Pizza",
+      description: "Our hand-tossed crust topped with zesty tomato sauce, mozzarella, pepperoni, bell peppers, onions, mushrooms, and olives, baked to golden perfection. A feast for the senses.",
+      calories: 1500,
+      price: 35
+    },
+    {
+      section: "desserts",
+      photo: "homemade-chocolate-ice-cream-recipe-7.jpg",
+      name: "Ice cream",
+      description: "Indulge in scoops of creamy, smooth ice cream, available in a variety of classic and innovative flavors to satisfy your sweet tooth.",
+      calories: 120,
+      price: 5
+    },
+    {
+      section: "desserts",
+      photo: "BAKERY-STYLE-CHOCOLATE-CHIP-COOKIES-9-637x637-1.jpg",
+      name: "COOKIES",
+      description: "Bite into our freshly baked cookies, brimming with chocolate chips and a hint of vanilla. A perfect blend of crispy edges and a chewy center.",
+      calories: 300,
+      price: 15
+    },
+    {
+      section: "desserts",
+      photo: "best-black-bean-brownies-recipe-4.jpg",
+      name: "Brownies",
+      description: "Enjoy our rich, chocolatey brownies with a dense, fudgy core and crackly top. Each bite is a decadent delight.",
+      calories: 350,
+      price: 10
+    },
+  ];
+  // Function to create meal's template
+  function mealTemplate(meal) {
+    return `
+    <div class="meal-item">
+      <img id="photo" src="${meal.photo}" alt="Nachos">
+      <h3 id="name">${meal.name}</h3>
+      <p id="description">${meal.description}</p>
+      <p id="calories" class="calorie-info">Calories: ${meal.calories} kcal</p>
+      <p id="price" class="price-info">${meal.price}SR</p>
+      <div class="quantity-selector">
+        <label for="item-quantity">Quantity:</label>
+        <button type="button" class="minus-btn" aria-label="Decrease quantity">-</button>
+        <input type="number" id="item-quantity" name="item-quantity" value="1" min="1" class="quantity-input">
+        <button type="button" class="plus-btn" aria-label="Increase quantity">+</button>
+      </div>
+      <div class="add-to-cart">
+        <label >GET</label>
+        <input type="checkbox">
+      </div>
+    </div>
+    `;
+  }
+
+  // display meals
+  function displayMeals(cuisine) {
+    cuisines.forEach((cuisine) => {
+      const meal = mealTemplate(cuisine);
+      if(cuisine.section == "appetizers") return appetizers.innerHTML += meal;
+      else if(cuisine.section == "main course") return mainCourse.innerHTML += meal;
+      else if(cuisine.section == "desserts") return desserts.innerHTML += meal;
+    })
+  }
+  displayMeals(cuisines);
+
+  // handling quantity
+  quantityFunction();
+  function quantityFunction() {
+    const meals = document.querySelectorAll(".meal-item");
+    meals.forEach((meal) => {
+      const incrementBtn = meal.querySelector(".plus-btn");
+      const quantityInput = meal.querySelector(".quantity-input");
+      const decrementBtn = meal.querySelector(".minus-btn");
+      // Function to increment the quantity
+      incrementBtn.addEventListener("click", function() {
+        let quantity = parseInt(quantityInput.value);
+        quantity++;
+        quantityInput.value = quantity;
+      });
+      // Function to decrement the quantity (minimum quantity is 1)
+      decrementBtn.addEventListener("click", function() {
+        let quantity = parseInt(quantityInput.value);
+        if (quantity > 1) {
+          quantity--;
+          quantityInput.value = quantity;
+        }
+      });
+    })
+  }
+
+  // Function to sort the meals
+  function sortMeals(criteria) {
+    const meals = cuisines;
+    // Check if the criteria is valid
+    if (criteria === "name-a-z") {
+      return meals.sort((a, b) => a.name.localeCompare(b.name));
+    } else if (criteria === "name-z-a") {
+      return meals.sort((a, b) => b.name.localeCompare(a.name));
+    } else if (criteria === "price-low-high") {
+      return meals.sort((a, b) => a.price - b.price);
+    } else if (criteria === "price-high-low") {
+     return  meals.sort((a, b) => b.price - a.price);
+    }
+  }
+  const sortType = document.getElementById("sort-options");
+  sortType.addEventListener("change", (e) => {
+    e.preventDefault();
+    const newSorting = sortMeals(sortType.value);
+    console.log("New sorting: ", newSorting);
+    appetizers.innerHTML = "" // clear existing meals
+    mainCourse.innerHTML = "" // clear existing meals
+    desserts.innerHTML = "" // clear existing meals
+    displayMeals(newSorting); // display meals with new sorting
+    quantityFunction();
+  })
+  // save to cart
+  function getCheckedBoxes() {
+    const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+    const checkedBoxes = [];
+    const meals = document.querySelectorAll(".meal-item");
+    checkboxes.forEach((checkbox, i) => {
+      if (checkbox.checked) {
+        
+        // get the quantity of the meal
+        const meal = meals[i];
+        const quantity = meal.querySelector(".quantity-input");
+        const order = {
+          photo: meal.querySelector("#photo").src,
+          name: meal.querySelector("#name").innerHTML,
+          description: meal.querySelector("#description").innerHTML,
+          calories: extractFirstNumberFromString(meal.querySelector("#calories").innerHTML),
+          price: extractFirstNumberFromString(meal.querySelector("#price").innerHTML),
+          quantity: quantity.value
+        };
+        // console.log(quantity.value);
+        checkedBoxes.push(order);
+      }
+    });
+    return checkedBoxes;
+  }
+  const goCartBtn = document.getElementById("cart-btn");
+  goCartBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+    const newOrder = getCheckedBoxes();
+    // Clear previous order
+    localStorage.removeItem("order");
+    // set new order's meals
+    localStorage.setItem("order", JSON.stringify(newOrder)); 
+    location.href = "CartPage.html" // redirect to cart page
+  })
+
+
+  function extractFirstNumberFromString(str) {
+    var match = str.match(/[-+]?\d*\.?\d+/);
+    return match ? parseFloat(match[0]) : NaN;
+}
+  </script>

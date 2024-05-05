@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Manage Offers| YumYumGo</title>
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+      body {
+        background-color: #fbfbe3; 
+      
+      }
+      
+      .container {
+        max-width: 1000px;
+        background-color: #fbfbe3;
+        margin: auto;
+        padding: 20px;
+      }
+      
+      h1, .header h2 {
+        background-color: #e5c6bd;
+        color: white;
+        padding: 10px;
+        margin: 0 0 20px 0;
+        text-align: center;
+        border-radius: 10rem;
+      }
+      
+      .offer-list, .add-offer-form {
+        margin-bottom: 20px;
+      }
+      
+      .offer-item {
+        display: flex;
+        align-items: center;
+        margin-bottom: 10px;
+      }
+      
+      .offer-item img {
+        display: inline-block;
+        background-color: #ccc;
+        width: 100px;
+        height: 100px;
+        margin-right: 10px;
+      }
+      
+      .offer-item span {
+        flex-grow: 1;
+      }
+      
+      .offer-type button {
+        margin-right: 5px;
+      }
+      
+      .delete-button, .add-button {
+        width: 100%;
+        padding: 10px;
+        border: none;
+        background-color: #6c4675;
+        color: white;
+        margin-top: 10px;
+      }
+      input[type="file"]
+        {
+          width: 100%;
+        padding: 10px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        box-sizing: border-box;
+        margin-bottom: 1rem;
+        background-color: white;
+        color:gray;
+      }
+      
+      .delete-button:hover, .add-button:hover {
+        background-color: #5c3c64;
+      }
+      
+      .form-group {
+        margin-bottom: 15px;
+      }
+      
+      .form-group label {
+        display: block;
+        margin-bottom: 5px;
+      }
+      
+      .form-group input[type="text"] {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        box-sizing: border-box;
+      }
+      
+      
+      @media (max-width: 768px) {
+        .container {
+          margin: 10px;
+        }
+      }
+       .dark-theme .container{
+        background-color: #1f0823;
+       }
+      
+       .dark-theme h1 {
+        background-color: #eea6a9;
+       }
+      
+      
+       .dark-theme h1 ,  .dark-theme h2{
+        background-color: #eea6a9;
+       }
+    
+    </style>
+  </head>
+  <body>
+    <header>
+      <div id="logo"><img src="logo4.jpg" alt="YumYumGo" /></div>
+      <nav id="nav-menu">
+        <a href="index.html" accesskey="h"> Home</a>
+        <a href="owner-dashboard.html" accesskey="o">Owner's Dashboard</a>
+        <a href="customer-dashboard.html" accesskey="c">Customer's Dashboard</a>
+        <a href="restaurants.html" accesskey="r">Restaurants</a>
+      </nav>
+    </header>
+    <div class="breadcrumbs-container">
+      <ul class="breadcrumbs">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="owner-dashboard.html">Owner's Dashboard</a></li>
+        <li class="current">Mange Offers</li>
+      </ul>
+    </div>
+    <div class="container">
+      <h1>Manage Offers</h1>
+
+      <section class="offers">
+        <div class="header">
+          <h2>Offers</h2>
+        </div>
+        <form id="allOffers" class="offer-list">
+          <!-- <div class="offer-item">
+            <img
+              src="new-food-offer-design-template-78b8a78303aa6194f8a6f870cd7cd4db_screen.jpeg"
+              alt="image"
+            />
+            <span>offer 1</span>
+            <input type="checkbox" name="offer1" id="offer1" />
+          </div>
+          <div class="offer-item">
+            <img
+              src="special-food-menu-ads-design-template-b14e3a764011669a97befcc1e3a83c49_screen.jpeg"
+              alt="image"
+            />
+            <span>offer 2</span>
+            <input type="checkbox" name="offer2" id="offer2" />
+          </div>
+          <div class="offer-item">
+            <img src="95ac966c-2f80-4fad-adb5-9c5a23859dcd.jpg" alt="image" />
+            <span>offer 3</span>
+            <input type="checkbox" name="offer3" id="offer3" />
+          </div> -->
+        </form>
+        <button id="delete-button" type="button" class="delete-button">
+          Delete Selected
+        </button>
+      </section>
+
+      <section class="add-offer">
+        <div class="header">
+          <h2>Add New Offer</h2>
+        </div>
+        <form id="add-offer" class="add-offer-form">
+          <div class="form-group">
+            <label for="offerName">Offer Name</label>
+            <input
+              type="text"
+              id="offerName"
+              name="offerName"
+              placeholder="Enter offer name"
+            />
+          </div>
+          <div class="form-group">
+            <label for="offerDescription">Offer Description</label>
+            <input
+              type="text"
+              id="offerDescription"
+              name="offerDescription"
+              placeholder="Enter offer description"
+            />
+          </div>
+          <label for="photo-upload">Offer Photo</label>
+          <input type="file" id="photo-upload" name="photo-upload" />
+      
+          <button type="submit" class="add-button">Add Offer</button>
+        </form>
+      </section>
+    </div>
+
+    <footer>
+      <p>&copy; 2024 YumYumGo</p>
+      <p>Phone: 123-456-7890</p>
+      <p>Email: info@YumYumGo.com</p>
+      <div id="social-media-icons">
+        <div>
+          <div> <button id="theme-toggle">
+            <img src="Vector (5).png" alt="Switch Theme">
+          </button>
+          <a href="https://www.instagram.com/yum.yumgo?igsh=ajQ1N3NqcWxuMXhy&utm_source=qr"><img   src="Vector.png" alt="Instagram APP" /></a>
+          <a href="https://www.linkedin.com"><img src="linkedin-3-xxl.png" alt="LinkedIn APP" /></a>
+          <a href="https://twitter.com/i/flow/login"><img src="Vector (1).png" alt="X APP" /></a>
+        </div>
+      </div>
+    </footer>
+    <script src="javaScript.js"></script>
+  </body>
+</html>
+
+<!-- Show offers -->
+<script>
+  const offerContainer = document.getElementById("allOffers");
+  const offers = JSON.parse(localStorage.getItem("offers"));
+  // insert offer content
+  offers.forEach((offer, index) => {
+    offerContainer.innerHTML += `
+    <div class="offer-item">
+            <img src="${offer.photo}" alt="image" />
+            <span>${offer.name}</span>
+            <input type="checkbox" name="offers" id="${index}" />
+    </div>
+    `;
+  });
+</script>
+
+<!-- Delete Offer -->
+<script>
+ const offerBoxes = document.querySelectorAll("form#allOffers .offer-item input");
+  const deleteBtn = document.getElementById("delete-button");
+ 
+  deleteBtn.addEventListener("click", (e) => {
+    e.preventDefault();
+    let checkedBoxes = []; // list of checked boxes ids
+    for (let i = 0; i < offerBoxes.length; i++) {
+      if (offerBoxes[i].checked) {
+        // confirm action
+        if (
+          confirm(
+            `You Are About to Delete "${offers[offerBoxes[i].id].name}" offer`
+          )
+        ) {
+          // if confirmed push offer id to checkBoxes to delete them later
+          checkedBoxes.push(parseInt(offerBoxes[i].id));
+        }
+      }
+    }
+    // check if there's no offer selected
+    if (checkedBoxes.length == 0)
+      return alert("Please select at least one offer");
+
+    // delete offers selected
+    let newOffers = []; // list of undeleted offers
+    offers.forEach((offer, index) => {
+      if (!checkedBoxes.includes(index)) {
+        newOffers.push(offer);
+      }
+    });
+    // let newOffers = offers.filter(
+    //         offer => offer.name !== offers[offerBoxes[i].id].name
+    //       );
+    localStorage.setItem("offers", JSON.stringify(newOffers)); // set new offers
+
+    location.reload(); // reload page
+  });
+</script>
+
+<!-- Add New Offer -->
+<script>
+  const form = document.getElementById("add-offer");
+  const name = document.getElementById("offerName");
+  const description = document.getElementById("offerDescription");
+  const photo = document.getElementById("photo-upload");
+  form.addEventListener("submit", (e) => {
+    e.preventDefault(); // prevent auto page reload
+
+    // check if inputs are fields
+    if (name.value.trim() === "") return alert("*Offer Name Is Required");
+    else if (description.value.trim() === "")
+      return alert("*Description IS Required");
+    else if (photo.files.length === 0) return alert("*Photo IS Required");
+
+    // check if name is number
+    let containsNumbersRegex = /\d/; // This regex checks if the value contains a digit
+    if (containsNumbersRegex.test(name.value))
+      return alert("Name Must Be String");
+
+    // read photo
+    let reader = new FileReader();
+    reader.addEventListener("load", async () => {
+      // after reading the file. store the data to local storage
+      let offers = JSON.parse(localStorage.getItem("offers")) || [];
+      let newOffer = {
+        name: name.value,
+        description: description.value,
+        photo: reader.result,
+      };
+      offers.push(newOffer);
+      localStorage.setItem("offers", JSON.stringify(offers));
+
+      // reload page
+      location.reload();
+    });
+    reader.readAsDataURL(photo.files[0]);
+  });
+</script>

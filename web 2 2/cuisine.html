@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Add New Cuisine | YumYumGo</title>
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+    
+
+body, html {
+    font-family: Arial, sans-serif;
+}
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #fbfbe3; 
+}
+main {
+    width: 100%;
+    max-width: 600px;
+    margin: 40px auto;
+    background-color: #fbfbe3; 
+    padding: 20px;
+   
+}
+
+main h1 {
+    margin-bottom: 2rem;
+    text-align: center;
+    color: white; 
+    background-color: #e5c6bd;
+    border-radius: 10rem;
+}
+
+label {
+    display: block;
+    margin: 0.5rem 0;
+    color: #5c3c64;
+}
+input[type="text"],
+input[type="file"],
+textarea {
+    width: 100%;
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+    border: 1px solid #5c3c64;
+    background-color: white; 
+    color: #5c3c64; 
+}
+
+input[type="text"]::placeholder,
+input[type="file"]::placeholder,
+textarea::placeholder {
+    color: #5c3c64; 
+}
+
+button {
+    background-color: #5c3c64;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+	 width: 104%;
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+button:hover {
+    opacity: 0.9;
+}
+.dark-theme main{
+  background-color: #1f0823;
+
+}
+
+.dark-theme h1{
+  background-color: #eea6a9;
+
+}
+    </style>
+  </head>
+  <body>
+    <script src="addCuisine.js"></script>
+
+    <header>
+      <div id="logo"><img src="logo4.jpg" alt="YumYumGo" /></div>
+      <nav id="nav-menu">
+        <a href="index.html" accesskey="h"> Home</a>
+        <a href="owner-dashboard.html" accesskey="o">Owner's Dashboard</a>
+        <a href="customer-dashboard.html" accesskey="c">Customer's Dashboard</a>
+        <a href="restaurants.html" accesskey="r">Restaurants</a>
+      </nav>
+    </header>
+    <div class="breadcrumbs-container">
+      <ul class="breadcrumbs">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="owner-dashboard.html">Owner's Dashboard</a></li>
+        <li class="current">cuisine</li>
+      </ul>
+    </div>
+    <main>
+      <h1>Add new cuisine</h1>
+
+      <form id="add-cuisine-form">
+        <label for="meal-name">Name of Meal</label>
+        <input
+          type="text"
+          id="meal-name"
+          name="meal-name"
+          placeholder="Enter the name of the cuisine"
+        />
+
+        <label for="calories">Calories</label>
+        <input
+          type="text"
+          id="calories"
+          name="calories"
+          placeholder="Enter the calories"
+        />
+
+        <label for="price">Price</label>
+        <input
+          type="text"
+          id="price"
+          name="price"
+          placeholder="Enter the price"
+        />
+
+        <label for="photo-upload">Add Photo</label>
+        <input type="file" id="photo-upload" name="photo-upload" />
+
+        <label for="description">Description</label>
+        <textarea
+          id="description"
+          name="description"
+          placeholder="Enter the description"
+        ></textarea>
+
+        <button type="submit">Submit</button>
+      </form>
+    </main>
+
+    <footer>
+      <p>&copy; 2024 YumYumGo</p>
+      <p>Phone: 123-456-7890</p>
+      <p>Email: info@YumYumGo.com</p>
+      <div id="social-media-icons">
+        <div> <button id="theme-toggle">
+          <img src="Vector (5).png" alt="Switch Theme">
+        </button>
+        <a href="https://www.instagram.com/yum.yumgo?igsh=ajQ1N3NqcWxuMXhy&utm_source=qr"><img   src="Vector.png" alt="Instagram APP" /></a>
+        <a href="https://www.linkedin.com"><img src="linkedin-3-xxl.png" alt="LinkedIn APP" /></a>
+        <a href="https://twitter.com/i/flow/login"><img src="Vector (1).png" alt="X APP" /></a>
+      </div>
+      </div>
+    </footer>
+
+<script src="javaScript.js"></script>
+  </body>
+</html>
+
+<script>
+  const form = document.getElementById("add-cuisine-form");
+  const name = document.getElementById("meal-name");
+  const calories = document.getElementById("calories");
+  const price = document.getElementById("price");
+  const photo = document.getElementById("photo-upload");
+  const description = document.getElementById("description");
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    // check if inputs are fields
+    if (name.value.trim() === "") return alert("*Meal Name Is Required");
+    else if (calories.value.trim() === "")
+      return alert("*Calories Is Required");
+    else if (price.value.trim() === "") return alert("*Price IS Required");
+    else if (photo.files.length === 0) return alert("*Photo IS Required");
+    else if (description.value.trim() === "")
+      return alert("*Description IS Required");
+    // end icheck if inputs are fields
+
+    // check if name is number
+    let containsNumbersRegex = /\d/; // This regex checks if the value contains a digit
+    // Check if the value entered starts with a number
+    if (containsNumbersRegex.test(name.value))
+      return alert("Name Must Be String");
+
+    // check if calories and price are numbers
+    if (isNaN(calories.value)) return alert("Calories Must Be A Number");
+
+    if (isNaN(price.value)) return alert("Price Must Be A Number");
+
+    // read photo
+    let reader = new FileReader();
+    reader.addEventListener("load", async () => {
+      // after reading the file. store the data to local storage
+      let cuisines = JSON.parse(localStorage.getItem("cuisines")) || [];
+      let newCuisine = {
+        name: name.value,
+        calories: calories.value,
+        price: price.value,
+        photo: reader.result,
+        description: description.value,
+      };
+      cuisines.push(newCuisine);
+      // confirm new meal added
+      localStorage.setItem("cuisines", JSON.stringify(cuisines));
+
+      alert(`${name.value} Meal Added Successfully`);
+      // reload page
+      location.reload();
+    });
+    reader.readAsDataURL(photo.files[0]);
+  });
+</script>

@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Evaluation| YumYumGo</title>
+    <link rel="stylesheet" href="styles.CSS" />
+
+    <style>
+      body {
+        background-color: #fbfbe3; 
+        color: #5c3c64; /* Color set for the body text */
+      }
+      
+      .feedback-container {
+        max-width: 800px;
+        background-color: #fbfbe3;
+        padding: 20px;
+        margin: auto;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        margin-bottom: 2rem;
+      }
+      
+      h1 {
+        font-size: 1.75em; /* Converted from 28px */
+        margin-bottom: 10px;
+        text-align: center; /* Center aligned */
+      }
+      
+      .feedback-container p {
+        margin-bottom: 20px;
+        text-align: center; /* Center aligned for paragraph within feedback container */
+      }
+      
+      .dropdown label,
+      .additional-feedback label {
+        display: block;
+        margin-bottom: 5px;
+      }
+      
+      .dropdown select,
+      .additional-feedback textarea {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 20px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        box-sizing: border-box;
+      }
+      
+      .rating-table {
+        width: 100%;
+        margin-bottom: 20px;
+        border-collapse: collapse;
+      }
+      
+      .rating-table th,
+      .rating-table td {
+        text-align: left;
+        padding: 10px;
+        border-bottom: 1px solid #ddd;
+      }
+      
+      .rating-table th {
+        background-color: #f3f3f3;
+      }
+      
+      .rating-table td {
+        vertical-align: middle;
+      }
+      
+      input[type="radio"] {
+        margin-right: 10px;
+      }
+      
+      .additional-feedback textarea {
+        height: 120px;
+      }
+      
+      b {
+        width: 100%;
+        padding: 10px;
+        background-color: #5c3c64;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+      
+      b:hover {
+        background-color: #483d55; /* Darkened shade for hover state */
+      }
+      
+      @media (max-width: 768px) {
+        .feedback-container {
+          margin: 10px;
+        }
+      }
+      .dark-theme .feedback-container{
+  background-color: #1f0823;
+}
+    </style>
+  </head>
+  <body>
+    <header>
+      <div id="logo"><img src="logo4.jpg" alt="YumYumGo" /></div>
+      <nav id="nav-menu">
+        <a href="index.html" accesskey="h">Home</a>
+        <a href="owner-dashboard.html " accesskey="o">Owner's Dashboard</a>
+        <a href="customer-dashboard.html" accesskey="c">Customer's Dashboard</a>
+        <a href="restaurants.html" accesskey="r">Restaurants</a>
+      </nav>
+    </header>
+
+    <div class="breadcrumbs-container">
+      <ul class="breadcrumbs">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="CartPage.html">Cart</a></li>
+        <li class="current">Evaluation</li>
+      </ul>
+    </div>
+
+    <div class="feedback-container">
+      <h1>Rate and Give Feedback</h1>
+      <p>
+        We are always looking for ways to improve your experience . please take
+        a moment to evalute and tell us what you think
+      </p>
+
+      <form id="form" action="#" method="post">
+        <div class="dropdown">
+          <label for="restaurants">Previous restaurants</label>
+          <select id="restaurants" name="restaurants">
+            <option value="DQ">DQ</option>
+            <option value="ULB">ULB</option>
+            <option value="Aratie">Aratie</option>
+            <option value="Bruger king">Bruger king</option>
+            <option value="AKIRA">AKIRA</option>
+            <option value="Panda Express">Panda Express</option>
+          </select>
+        </div>
+
+        <table class="rating-table">
+          <tr>
+            <th>Questions</th>
+            <th>Excellent</th>
+            <th>Good</th>
+            <th>Fair</th>
+            <th>Poor</th>
+            <th>Very poor</th>
+          </tr>
+          <tr>
+            <td>1. Overall Rating</td>
+            <td>
+              <input type="radio" name="overallRating" value="excellent" />
+            </td>
+            <td><input type="radio" name="overallRating" value="good" /></td>
+            <td><input type="radio" name="overallRating" value="fair" /></td>
+            <td><input type="radio" name="overallRating" value="poor" /></td>
+            <td>
+              <input type="radio" name="overallRating" value="verypoor" />
+            </td>
+          </tr>
+          <tr>
+            <td>2. Quality of food</td>
+            <td>
+              <input type="radio" name="Quality of food" value="excellent" />
+            </td>
+            <td><input type="radio" name="Quality of food" value="good" /></td>
+            <td><input type="radio" name="Quality of food" value="fair" /></td>
+            <td><input type="radio" name="Quality of food" value="poor" /></td>
+            <td>
+              <input type="radio" name="Quality of food" value="verypoor" />
+            </td>
+          </tr>
+          <tr>
+            <td>3. Cleanliness</td>
+            <td><input type="radio" name="Cleanliness" value="excellent" /></td>
+            <td><input type="radio" name="Cleanliness" value="good" /></td>
+            <td><input type="radio" name="Cleanliness" value="fair" /></td>
+            <td><input type="radio" name="Cleanliness" value="poor" /></td>
+            <td><input type="radio" name="Cleanliness" value="verypoor" /></td>
+          </tr>
+          <tr>
+            <td>4. Accuracy of the order</td>
+            <td>
+              <input
+                type="radio"
+                name="Accuracy of the order"
+                value="excellent"
+              />
+            </td>
+            <td>
+              <input type="radio" name="Accuracy of the order" value="good" />
+            </td>
+            <td>
+              <input type="radio" name="Accuracy of the order" value="fair" />
+            </td>
+            <td>
+              <input type="radio" name="Accuracy of the order" value="poor" />
+            </td>
+            <td>
+              <input
+                type="radio"
+                name="Accuracy of the order"
+                value="verypoor"
+              />
+            </td>
+          </tr>
+          <tr>
+            <td>5. The speed of service</td>
+            <td>
+              <input
+                type="radio"
+                name="The speed of service"
+                value="excellent"
+              />
+            </td>
+            <td>
+              <input type="radio" name="The speed of service" value="good" />
+            </td>
+            <td>
+              <input type="radio" name="The speed of service" value="fair" />
+            </td>
+            <td>
+              <input type="radio" name="The speed of service" value="poor" />
+            </td>
+            <td>
+              <input
+                type="radio"
+                name="The speed of service"
+                value="verypoor"
+              />
+            </td>
+          </tr>
+        </table>
+
+        <div class="additional-feedback">
+          <label for="feedback">Additional Feedback</label>
+          <textarea
+            id="feedback"
+            name="feedback"
+            placeholder="Enter your feedback (optional)"
+          ></textarea>
+        </div>
+
+        <button id="b" type="submit">Submit</button>
+      </form>
+    </div>
+    <footer>
+      <p>&copy; 2024 YumYumGo</p>
+      <p>Phone: 123-456-7890</p>
+      <p>Email: info@YumYumGo.com</p>
+      <div id="social-media-icons">
+        <div> <button id="theme-toggle">
+          <img src="Vector (5).png" alt="Switch Theme">
+        </button>
+          <a href="https://www.instagram.com/yum.yumgo?igsh=ajQ1N3NqcWxuMXhy&utm_source=qr"><img   src="Vector.png" alt="Instagram APP" /></a>
+          <a href="https://www.linkedin.com"><img src="linkedin-3-xxl.png" alt="LinkedIn APP" /></a>
+          <a href="https://twitter.com/i/flow/login"><img src="Vector (1).png" alt="X APP" /></a>
+        </div>
+      </div>
+    </footer>
+    <script src="javaScript.js"></script>
+  </body>
+</html>
+
+<script>
+  const form = document.getElementById("form");
+  form.addEventListener("submit", (e) => {
+    const restaurant = document.getElementById("restaurants");
+    const overallRating = document.querySelector(
+      'input[name="overallRating"]:checked'
+    );
+    const qualityOfFood = document.querySelector(
+      'input[name="Quality of food"]:checked'
+    );
+    const cleanliness = document.querySelector(
+      'input[name="Cleanliness"]:checked'
+    );
+    const accuracyOfTheOrder = document.querySelector(
+      'input[name="Accuracy of the order"]:checked'
+    );
+    const theSpeedOfService = document.querySelector(
+      'input[name="The speed of service"]:checked'
+    );
+    e.preventDefault();
+    if (!restaurant) return alert("Please Select A Restaurant");
+    if (!overallRating) return alert("Please Rate Over All Rating");
+    if (!qualityOfFood) return alert("Please Rate Quality Of Food");
+    if (!cleanliness) return alert("Please Rate Cleanliness");
+    if (!accuracyOfTheOrder) return alert("Please Rate Accuracy Of The Order");
+    if (!theSpeedOfService) return alert("Please Rate The Speed Of Service");
+    alert(
+      `“Thank you for your feedback! Your rating for restaurant ${restaurant.value} is ${overallRating.value}”`
+    );
+    location.href = "index.html";
+  });
+</script>

@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Home Page| YumYumGo</title>
+<link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+
+<style>
+body{
+  background-color: #fbfbe3;
+  font-size: 1em;
+
+}
+
+
+/* Base style */
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+img {
+    width: 100%;
+    height: auto;
+}
+
+.column {
+    width: 48%; /* slightly less than half the container width to fit margins */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .column {
+        width: 100%; /* each column takes full width on smaller screens */
+    }
+}
+
+@media (max-width: 768px) {
+    .navigation {
+        display: none;
+    }
+    .mobile-navigation {
+        display: block;
+    }
+}
+table {
+    width: 100%;
+    overflow-x: scroll;
+    display: block;
+}
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+}
+
+
+
+
+
+</style>
+</head>
+<body>
+<header>
+  <div id="logo"><img src="logo4.jpg" alt="YumYumGo"></div>
+    <nav id="nav-menu">
+      <a href="index.html" accesskey="h"> Home</a>
+      <a href="owner-dashboard.html" accesskey="o">Owner's Dashboard</a>
+      <a href="customer-dashboard.html" accesskey="c">Customer's Dashboard</a>
+      <a href="restaurants.html"accesskey="r">Restaurants</a>
+  
+  </nav>
+</header>
+
+
+<div class="breadcrumbs-container">
+  <ul class="breadcrumbs">
+
+    <li class="current">Home</li>
+  </ul>
+</div>
+
+
+<div class="maen">
+
+  <div class="men_text">
+      <h1>Get Fresh<span>Food</span><br>in an Easy Way</h1>
+      <h3> Experience culinary convenience with YumYumGo. Explore a world of flavors through seamless food delivery, diverse cuisines, and effortless ordering. </h3>
+  </div>
+
+  <div class="main_image">
+      <img src="main_img-removebg-preview.png">
+  </div>
+
+</div>
+
+<div class="main_btn">
+  <a href="customer-dashboard.html">Order Now</a>
+  <i class="fa-solid fa-angle-right"></i>
+</div>
+
+     
+
+
+<section id="offers">
+  <div class="title">Restaurants Offers</div>
+    <div class="offer">
+      <img src="WhatsApp Image 2024-03-14 at 12.58.36 AM.jpeg" alt="Offer 1">
+      <h3>Special Food Menu</h3>
+      <p>This weekend only, dive into our Special Food Menu! Enjoy the vibrant flavors of our signature dishes!</p>
+    </div>
+   
+    <div class="offer">
+      <img src="95ac966c-2f80-4fad-adb5-9c5a23859dcd.jpg" alt="Offer 2">
+      <h3>Super Delicious Pizza</h3>
+      <p>Satisfy your pizza cravings with our Super Delicious Pizza, now at 30% off! Indulge in the perfect blend of melted cheese and fresh toppings.</p>
+    </div>
+    <div class="offer">
+      <img src="968f5aad-c18f-442c-a2f4-a32b2c63acf7.jpg" alt="Offer 3">
+      <h3>Weekend Burger Bash</h3>
+      <p>Join our Special Weekend Menu with a mouth-watering burger special. Save 50% on your order and relish the taste of our gourmet burgers.</p>
+    </div>
+    <div class="offer">
+      <img src="salad-menu-design-template-a948e03c89cf8bd495557341780bb72c_screen.jpeg" alt="Offer 4">
+      <h3>Yummy! Salad Menu</h3>
+      <p>Refresh your diet with our Yummy! Salad Menu. Get 50% off on all salads, packed with fresh, nutritious ingredients.</p>
+    </div>
+    <div class="offer">
+      <img src="special-food-menu-ads-design-template-b14e3a764011669a97befcc1e3a83c49_screen.jpeg" alt="Offer 5">
+      <h3>This Week's Special Menu</h3>
+      <p>Indulge in our chef's selection with This Week's Special Food Menu. Enjoy a 30% discount on our succulent steaks and fresh, garden salads.</p>
+    </div>
+    <div class="offer">
+      <img src="new-food-offer-design-template-78b8a78303aa6194f8a6f870cd7cd4db_screen.jpeg" alt="Offer 6">
+      <h3>New Food Arrival</h3>
+      <p>Explore our New Food Arrival and get 20% off for online orders! Fresh flavors await with our latest creations that promise to tantalize your taste buds.</p>
+    </div>
+  </section>
+  
+
+
+
+  <section id="reviews">
+    <div class="title1">Customer's reviews</div>
+    <article class="review">
+      <div class="review-container">
+        <div class="review-image-container">
+          <img src="istockphoto-1437816897-170667a.webp" alt="Customer Reem" class="review-avatar">
+          <img src="2024-cen-mar-hp-cc-overlay-italian-dinner-2x._TTW_._CR0,0,2160,1296_._SR1500,900_._QL100_.jpg" alt="Italian Dinner" class="review-main-image">
+        </div>
+        <div class="review-content">
+          <h3 class="reviewer-name">Reem</h3>
+          <h5>Saffron Skies</h5>
+          <p>Both food and the customer service were good.</p>
+          <div class="rating">★★★★☆</div>
+        </div>
+      </div>
+    </article>
+  
+    <article class="review">
+      <div class="review-container">
+        <div class="review-image-container">
+          <img src="WhatsApp Image 2024-03-14 at 2.54.23 AM.jpeg" alt="Customer Mohammed" class="review-avatar">
+          <img src="pexels-chan-walrus-958545.jpeg" alt="Burger Meal" class="review-main-image">
+        </div>
+        <div class="review-content">
+          <h3 class="reviewer-name">Mohammed</h3>
+          <h5> Aratie</h5>
+          <p>Everything was good,the customer service was quick and friendly.</p>
+          <div class="rating">★★★★★</div>
+        </div>
+      </div>
+    </article>
+  
+    <article class="review">
+      <div class="review-container">
+        <div class="review-image-container">
+          <img src="WhatsApp Image 2024-03-14 at 2.54.26 AM.jpeg" alt="Customer Noura" class="review-avatar">
+          <img src="FAW-recipes-pasta-sausage-basil-and-mustard-hero-06-cfd1c0a2989e474ea7e574a38182bbee.jpeg" alt="Pasta Dish" class="review-main-image">
+        </div>
+        <div class="review-content">
+          <h3 class="reviewer-name">Noura</h3>
+          <h5>Pasta Perfection</h5>
+          <p>The pasta was cooked flawlessly,service was efficient.</p>
+          <div class="rating">★★★★☆</div>
+        </div>
+      </div>
+    </article>
+  
+    <article class="review">
+      <div class="review-container">
+        <div class="review-image-container">
+          <img src="WhatsApp Image 2024-03-14 at 2.54.27 AM.jpeg" alt="Customer Fahad" class="review-avatar">
+          <img src="Landing_image_Desktop.jpeg" alt="Diverse Dishes" class="review-main-image">
+        </div>
+       
+        <div class="review-content">
+          <h3 class="reviewer-name">Fahad</h3>
+          <h5>Quick Feast Bistro</h5>
+        
+          <p>Great selection of dishes,all well-prepared. The service was notably warm and prompt.</p>
+          <div class="rating">★★★★☆</div>
+        </div>
+      </div>
+    </article>
+  
+    <article class="review">
+      <div class="review-container">
+        <div class="review-image-container">
+          <img src="WhatsApp Image 2024-03-14 at 2.54.26 AM (1).jpeg" alt="Customer Fatimah" class="review-avatar">
+          <img src="Hamburger-and-french-fries-paper-box.webp" alt="Burger and Fries" class="review-main-image">
+        </div>
+        <div class="review-content">
+          <h3 class="reviewer-name">Fatimah</h3>
+          <h5>ULB</h5>
+          <p>Incredible burger,juicy and flavorful. Quick,friendly service too!</p>
+          <div class="rating">★★★★★</div>
+        </div>
+      </div>
+    </article>
+  
+    <article class="review">
+      <div class="review-container">
+        <div class="review-image-container">
+          <img src="WhatsApp Image 2024-03-14 at 2.54.25 AM.jpeg" alt="Customer Salma" class="review-avatar">
+          <img src="fast_foodF.webp" alt="Fast Food" class="review-main-image">
+        </div>
+        <div class="review-content">
+          <h3 class="reviewer-name">Salma</h3>
+          <h5>DQ</h5>
+          <p>Tasty burger with fresh ingredients,wished for more sauce.</p>
+          <div class="rating">★★★★☆</div>
+        </div>
+      </div>
+    </article>
+  
+  </section>
+    
+
+<footer>
+  <p>&copy; 2024 YumYumGo</p>
+  <p>Phone: 123-456-7890</p>
+  <p>Email: info@YumYumGo.com</p>
+  <div id="social-media-icons">
+  
+    <div> <button id="theme-toggle">
+      <img src="Vector (5).png" alt="Switch Theme">
+    </button>
+    <a href="https://www.instagram.com/yum.yumgo?igsh=ajQ1N3NqcWxuMXhy&utm_source=qr"><img   src="Vector.png" alt="Instagram APP" /></a>
+    <a href="https://www.linkedin.com"><img src="linkedin-3-xxl.png" alt="LinkedIn APP" /></a>
+    <a href="https://twitter.com/i/flow/login"><img src="Vector (1).png" alt="X APP" /></a>
+  </div>
+  </div>
+</footer>
+<script src="javaScript.js"></script>
+</body>
+</html>

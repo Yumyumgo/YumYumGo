@@ -1,0 +1,360 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1em;
+  background: #6c4675;
+  color: #fff;
+  height: 5rem;
+
+}
+
+.maen{
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  position: relative;
+  top: 100px;
+}
+
+.maen .men_text h1{
+  font-size: 375%;
+  position: relative;
+  top: -50px;
+  left: 6rem;
+  color: #5c3c64;
+}
+
+.maen .men_text h3{
+color: #6c4675;
+margin-left: 7rem;
+font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
+
+
+}
+
+
+.maen .men_text h1 span{
+  margin-left: 15px;
+  color: #eea6a9;
+  font-family: mv boli;
+  line-height: 22px;
+  font-size: 70px;
+}
+
+.maen .main_image img{
+  width: 700px;
+  position: relative;
+  left: 0px;
+}
+
+.main_btn{
+background: #eea6a9;
+position: relative;
+left: 123px;
+bottom: -15px;
+width: 150px;
+
+padding: 12px 25px;
+
+}
+
+.main_btn a{
+color: #6c4675;
+margin-right: 5px;
+text-decoration: none;
+}
+
+.main_btn i{
+color: #5c3c64;
+transition: 0.3s;
+}
+
+
+
+
+#nav-menu {
+display: flex; 
+justify-content: space-around; 
+align-items: center; 
+background-color: #6c4675; 
+padding: 10px 0;
+}
+
+#nav-menu a {
+color: #e5c6bd;
+text-decoration: none; 
+padding: 10px; 
+}
+
+#nav-menu a:hover {
+background-color: #5c3c64; 
+color: #fbfbe3; 
+}
+
+
+
+
+
+
+
+
+#nav-menu a {
+  color: #e5c6bd;
+  text-decoration: none;
+  margin: 0 1em;
+}
+
+#nav-menu a:hover {
+  text-decoration: underline;
+}
+
+#logo img {
+  width: 100px;
+}
+
+
+
+footer {
+  background: #6c4675;
+  color: #e5c6bd;
+  text-align: center;
+  padding: 1em 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  font-family: 'Courier New', Courier, monospace ;
+  }
+  
+  #social-media-icons img {
+    margin-left: 10px;
+    width: 35px; /* Adjust spacing between icons */
+  }
+
+
+
+
+
+
+
+
+  #reviews {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(250px, 1fr)); /* This creates a responsive grid layout */
+    gap: 20px;
+    padding: 20px;
+    padding-left: 35%;
+    justify-content: center;
+    width: 30%;
+    
+  }
+  
+  .review {
+    background:blanchedalmond;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-left: 5%;
+    width: auto;
+    margin-top: 40%;
+  }
+  
+
+  .review-image-container {
+    width: 100%;
+    padding-top: 15px; 
+  }
+  
+  .review-avatar {
+    width: 80px; 
+    height: 80px;
+    border-radius: 50%; 
+    object-fit: cover; 
+  }
+  
+  .review-main-image {
+    width: 90%; 
+    height: 50%; 
+    margin-top: 10px; 
+    object-fit: cover; 
+  }
+  .reviewer-name {
+    font-weight: bold;
+    margin: 0;
+  }
+  .review-content {
+    display: flex;
+    flex-direction: column; 
+    align-items: flex-start; 
+    padding: 15px;
+    width: 100%;
+    font-family: 'Courier New', Courier, monospace;
+    color: #6c4675;
+  }
+  
+  .review-content p {
+    margin: 0 0 10px 0; 
+    flex-grow: 0; 
+  }
+  
+  .rating {
+    font-size: 20px;
+    color: #6c4675; 
+    margin-top: auto; 
+    width: 100%; 
+    text-align: center; 
+  }
+  #offers {
+    display: flex;
+    overflow-x: auto;
+    padding: 2em 0;
+  }
+  
+
+  /* Last offer's margin fix */
+  .offer:last-child {
+    margin-right: 0;
+  }
+  
+  /* ... other styles ... */
+  .offer {
+    flex: 0 0 auto; 
+    width: 300px;
+    margin-right: 1em; 
+    border: 1px solid #ddd; 
+    padding: 1em; 
+    background-color: blanchedalmond; 
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    margin-top: 13%; 
+    color: #6c4675;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
+  }
+ 
+  
+  .offer img {
+    width: 100%;
+  }  
+  .title{
+    color: #6c4675;
+  text-align: center;
+  font-family: "Roboto-Bold", sans-serif;
+  font-size: 40px;
+  line-height: 48px;
+  font-weight: 700;
+  position: absolute;
+  width: 520px;
+margin-left: 30%;
+margin-top: 5rem;
+  }
+  .title1{  color: #6c4675;
+    font-family: "Roboto-Bold", sans-serif;
+    font-size: 30px;
+    line-height: 48px;
+    font-weight: 700;
+    position: absolute;
+    width: 520px;
+    margin-right: 3rem;
+ }
+
+
+
+ /* Breadcrumb styling */
+ .breadcrumbs {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  margin-left: 3rem; 
+  margin-top: 1rem;/* Removes default margin to align directly under the logo */
+}
+
+.breadcrumbs li {
+  display: inline;
+  margin-right: 5px; 
+}
+
+.breadcrumbs a{
+  color: #6c4675; 
+  text-decoration: underline; 
+}
+
+.breadcrumbs .current {
+  text-decoration: none; 
+  color: #e5c6bd;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+@media (max-width: 768px) {
+  .main_text h1, .main_text h3 {
+      font-size: smaller;
+  }
+}
+
+@media (max-width: 768px) {
+  nav {
+      display: flex;
+      flex-direction: column;
+  }
+  nav a {
+      flex: 1;
+      text-align: center;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+.dark-theme {
+  background-color: #1f0823; 
+
+}
+
+
+.dark-theme header, .dark-theme footer, .dark-theme #nav-menu {
+  background-color: #eea6a9; 
+  color: #5c3c64; 
+}
+
+
+.dark-theme .main_btn, .dark-theme a {
+  background-color: #eea6a9; 
+  
+}
+#theme-toggle {
+  border: none;  /* Removes the default button border */
+  background: none;  /* Removes the default button background */
+  padding: 0;  /* Removes the default padding */
+  cursor: pointer;  /* Changes the cursor to indicate it's clickable */
+}
+
+#theme-toggle img {
+  width: 35px;  /* Set the width of the image */
+  height: auto;  /* Maintains the aspect ratio of the image */
+}

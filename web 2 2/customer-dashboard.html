@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Customer Dashboard| YumYumGo</title>
+    <link rel="stylesheet" href="styles.css" />
+
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #fbfbe3;
+      }
+      .container {
+        max-width: 1200px;
+        margin: auto;
+        padding: 20px;
+      }
+
+      .header-title {
+        font-size: 41px;
+        color: #e5c6bd;
+        font-weight: bold;
+        margin-left: 5%;
+      }
+
+      .section {
+        margin-top: 70px;
+      }
+      .section-title {
+        font-size: 24px;
+        color: white;
+        margin-bottom: 20px;
+        margin-top: 2%;
+        text-align: center;
+        background-color: #eea6a9;
+        border-radius: 2rem;
+      }
+      .restaurants {
+        display: flex;
+        /* justify-content: space-between; */
+      }
+      .restaurant {
+        width: calc(33.333% - 20px);
+        margin-bottom: 20px;
+      }
+      .restaurant-image {
+        width: 37%;
+        height: auto;
+        border-radius: 50%;
+        overflow: hidden;
+        margin-left: 32%;
+      }
+      .restaurant-image img {
+        width: 100%;
+        display: block;
+      }
+      .restaurant-info {
+        color: #5c3c64;
+        text-align: center;
+        padding: 10px;
+      }
+      .restaurant-rating {
+        font-size: 20px;
+        color: #ffcc00;
+        margin-top: 10px;
+        text-align: center;
+      }
+
+      .header-image img {
+        width: 100%;
+        display: flex;
+      }
+
+      .breadcrumbs {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        margin-left: 3rem;
+      }
+
+      .breadcrumbs li {
+        display: inline;
+        margin-right: 5px;
+      }
+
+      .breadcrumbs a {
+        color: #6c4675;
+        text-decoration: underline;
+      }
+
+      .breadcrumbs .current {
+        text-decoration: none;
+        color: #e5c6bd;
+      }
+
+    </style>
+  </head>
+  <header>
+    <div id="logo"><img src="logo4.jpg" alt="YumYumGo" /></div>
+    <nav id="nav-menu">
+      <a href="index.html" accesskey="h"> Home</a>
+      <a href="owner-dashboard.html" accesskey="o">Owner's Dashboard</a>
+      <a href="customer-dashboard.html" accesskey="c">Customer's Dashboard</a>
+      <a href="restaurants.html" accesskey="r">Restaurants</a>
+    </nav>
+  </header>
+
+  <body>
+    <div class="header-image">
+      <img src="1.png" alt="Featured" />
+
+      <div class="breadcrumbs-container">
+        <ul class="breadcrumbs">
+          <li><a href="index.html">Home</a></li>
+          <li class="current">Customer's Dashboard</li>
+        </ul>
+      </div>
+      <center><span id="date"></span></center>
+    </div>
+
+    <div class="container">
+      <div class="header"></div>
+
+      <div class="section">
+        <div class="section-title">Featured Restaurants</div>
+        <div id="featured" class="restaurants">
+          <!-- js will load the content -->
+        </div>
+        <button id="featuredMore">More..</button>
+      </div>
+
+      <div class="section">
+        <div class="section-title">Popular Restaurants</div>
+        <div id="popular" class="restaurants">
+          <!-- js will load the content -->
+        </div>
+        <button id="popularMore">More..</button>
+      </div>
+
+        <div class="section">
+          <div class="section-title">New Restaurants</div>
+          <div id="new" class="restaurants">
+            <!-- js will load the content -->
+          </div>
+          <div class="more-btn-container">
+            <button id="newMore" class="more-btn">More..</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <p>&copy; 2024 YumYumGo</p>
+      <p>Phone: 123-456-7890</p>
+      <p>Email: info@YumYumGo.com</p>
+      <div id="social-media-icons">
+        <div> 
+          <button id="theme-toggle">
+          <img src="Vector (5).png" alt="Switch Theme">
+        </button>
+        <a href="https://www.instagram.com/yum.yumgo?igsh=ajQ1N3NqcWxuMXhy&utm_source=qr"><img   src="Vector.png" alt="Instagram APP" /></a>
+        <a href="https://www.linkedin.com"><img src="linkedin-3-xxl.png" alt="LinkedIn APP" /></a>
+        <a href="https://twitter.com/i/flow/login"><img src="Vector (1).png" alt="X APP" /></a>
+      </div>
+      </div>
+    </footer>
+    <script src="javaScript.js"></script>
+  </body>
+</html>
+
+<!-- display week's date -->
+<script>
+  const date = document.getElementById("date");
+  // Get the current date
+  let currentDate = new Date();
+
+  // Calculate the start of the current week (assuming Sunday is the first day of the week)
+  let startOfWeek = new Date(currentDate);
+  startOfWeek.setDate(currentDate.getDate() - currentDate.getDay());
+
+  // Format the start of the week as "YYYY-MM-DD"
+  let formattedStartOfWeek = startOfWeek.toISOString().slice(0, 10);
+
+  date.innerText = formattedStartOfWeek;
+</script>
+
+<!-- load featured resturants -->
+<script>
+  const featuredContainer = document.getElementById("featured");
+  const featured = [
+    {
+      img: "0a2bdb34-ea78-44bf-8d7b-8a673f1ddd03.jpeg",
+      info: "TAMALE<br />mexican<br />",
+      description:
+        "Authentic Mexican tamales with a variety of savory fillings.",
+      rating: "★★★★★",
+      hover: "Authentic Mexican tamales with a variety of savory fillings.",
+    },
+    {
+      img: "arati-logo_b1d23b932978371909485d6d79e3c0341611821593.jpeg",
+      info: "Aratie<br />Indian<br />",
+      description:
+        "Flavorful Indian curries, tandoori, and breads in a cozy setting.",
+      rating: "★★★★★",
+      hover:
+        "Flavorful Indian curries, tandoori, and breads in a cozy setting.",
+    },
+    {
+      img: "Dairy-Queen-1.png",
+      info: "DQ<br />American<br />",
+      description:
+        "Iconic for soft-serve ice cream and American fast food staples.",
+      rating: "★★★★★",
+      hover:
+        "Iconic for soft-serve ice cream and American fast food staples.",
+    },
+  ];
+
+  // Function to create HTML for a restaurant
+  function createRestaurantHTML(restaurant) {
+    return `
+      <div class="restaurant">
+        <div class="restaurant-image">
+          <a href="restaurants.html">
+            <img src="${restaurant.img}" alt="" />
+          </a>
+        </div>
+        <div class="restaurant-info">
+          ${restaurant.info}
+          <p>${restaurant.description}</p>
+        </div>
+        <div class="restaurant-rating">${restaurant.rating}</div>
+        <div class="restaurant-hover" style="display: none;">
+            <img src="${restaurant.img}" alt="" style="width:50px">
+          ${restaurant.info}
+          <div>${restaurant.rating}</div>
+          <div>${restaurant.hover}</div>
+        </div>
+      </div>
+    `;
+  }
+
+  // Function to display featured restaurants
+  let numOfItemsDisplaied = 0;
+  function displayFeaturedRestaurants() {
+    const defaultNumOfItems = 2;
+    for(; numOfItemsDisplaied < defaultNumOfItems; numOfItemsDisplaied++){
+      const restaurantHTML = createRestaurantHTML(featured[numOfItemsDisplaied]);
+      featuredContainer.innerHTML += restaurantHTML;
+    }
+  }
+
+  // Call the function to display featured restaurants
+  displayFeaturedRestaurants();
+  
+  attachHoverListeners();
+  // Show additional details on hover
+  function attachHoverListeners(){
+    const restaurants = document.querySelectorAll(".restaurant");
+    restaurants.forEach((restaurant) => {
+      restaurant.addEventListener("mouseover", () => {
+        const hoverDiv = restaurant.querySelector(".restaurant-hover");
+        hoverDiv.style.display = "block";
+      });
+  
+      restaurant.addEventListener("mouseout", () => {
+        const hoverDiv = restaurant.querySelector(".restaurant-hover");
+        hoverDiv.style.display = "none";
+      });
+    });
+  }
+
+  // Load more featured restaurants
+  function displayMoreFeaturedRestaurants() {
+    const featuredMore = document.getElementById('featuredMore');
+    for( let i = numOfItemsDisplaied; i < featured.length; i++){
+      const restaurantHTML = createRestaurantHTML(featured[i]);
+      featuredContainer.innerHTML += restaurantHTML;
+    }
+    attachHoverListeners(); // Attach hover event listeners to the newly added restaurants
+  }
+  // Event listener for "More" button
+  const featuredMoreButton = document.getElementById("featuredMore");
+  featuredMoreButton.addEventListener("click", displayMoreFeaturedRestaurants);
+</script>
+
+<!-- load popular resturants -->
+<script>
+  const popularContainer = document.getElementById("popular");
+  const popular = [
+    {
+      img: "images.png",
+      info: "Panda Express<br />Chinese<br />",
+      description: "American Chinese classics served up fast and hot.",
+      rating: "★★★★★",
+      hover: "American Chinese classics served up fast and hot.",
+    },
+    {
+      img: "download.png",
+      info: "Burger King<br />American<br />",
+      description:
+        "Home of the Whopper, serving flame-grilled burgers and sides.",
+      rating: "★★★★★",
+      hover: "Home of the Whopper, serving flame-grilled burgers and sides.",
+    },
+    {
+      img: "a6071dabc2963223e8620d8e33efb11f.jpeg",
+      info: "ULB<br />American<br />",
+      description:
+        "Trendy spot for gourmet burgers, fries, and a selection of beers.",
+      rating: "★★★★★",
+      hover: "Trendy spot for gourmet burgers, fries, and a selection of beers.",
+    },
+  ];
+
+  // Function to create HTML for a restaurant
+  function createRestaurantHTML(restaurant) {
+    return `
+      <div class="restaurant">
+        <div class="restaurant-image">
+          <a href="restaurants.html">
+            <img src="${restaurant.img}" alt="" />
+          </a>
+        </div>
+        <div class="restaurant-info">
+          ${restaurant.info}
+          <p>${restaurant.description}</p>
+        </div>
+        <div class="restaurant-rating">${restaurant.rating}</div>
+        <div class="restaurant-hover" style="display: none;">
+            <img src="${restaurant.img}" alt="" style="width:50px">
+          ${restaurant.info}
+          <div>${restaurant.rating}</div>
+          <div>${restaurant.hover}</div>
+        </div>
+      </div>
+    `;
+  }
+  
+  // Function to display featured restaurants
+  let numOfPopItemsDisplaied = 0;
+  function displayFeaturedRestaurants() {
+    const defaultNumOfItems = 2;
+    for(; numOfPopItemsDisplaied < defaultNumOfItems; numOfPopItemsDisplaied++){
+      const restaurantHTML = createRestaurantHTML(popular[numOfPopItemsDisplaied]);
+      popularContainer.innerHTML += restaurantHTML;
+    }
+  }
+
+  // Call the function to display featured restaurants
+  displayFeaturedRestaurants();
+
+  attachHoverListeners();
+  // Show additional details on hover
+  function attachHoverListeners(){
+    const restaurants = document.querySelectorAll(".restaurant");
+    restaurants.forEach((restaurant) => {
+      restaurant.addEventListener("mouseover", () => {
+        const hoverDiv = restaurant.querySelector(".restaurant-hover");
+        hoverDiv.style.display = "block";
+      });
+  
+      restaurant.addEventListener("mouseout", () => {
+        const hoverDiv = restaurant.querySelector(".restaurant-hover");
+        hoverDiv.style.display = "none";
+      });
+    });
+  }
+
+  // Load more featured restaurants
+  function displayMorePopularRestaurants() {
+    for( let i = numOfPopItemsDisplaied ; i < popular.length; i++){
+      const restaurantHTML = createRestaurantHTML(popular[i]);
+      popularContainer.innerHTML += restaurantHTML;
+      console.log(restaurantHTML);
+    }
+    attachHoverListeners(); // Attach hover event listeners to the newly added restaurants
+  }
+  // Event listener for "More" button
+  const popularMoreButton = document.getElementById("popularMore");
+  popularMoreButton.addEventListener("click", displayMorePopularRestaurants);
+</script>
+
+<!-- load new resturants -->
+<script>
+  const newContainer = document.getElementById("new");
+  const newResturants = [
+    {
+      img: "original-199bb3babfd985c9c01386415951b4d4.jpeg",
+      info: "AKIRA<br />japanese<br />",
+      description:
+        "Experience traditional Japanese cuisine with Akira’s fresh sushi and sashimi selections.",
+      rating: "★★★★★",
+      hover: "Experience traditional Japanese cuisine with Akira’s fresh sushi and sashimi selections."
+    },
+    {
+      img: "attachment_110637885.jpeg",
+      info: "Tacos Li Fiesta<br />Mexican<br />",
+      description:
+        "A vibrant spot for classic Mexican tacos, enchiladas, and festive drinks.",
+      rating: "★★★★★",
+      hover: "A vibrant spot for classic Mexican tacos, enchiladas, and festive drinks."
+    },
+    {
+      img: "Arbys.png",
+      info: "Arbys<br />American<br />",
+      description:
+        "Quick-service eatery specializing in roast beef sandwiches and curly fries.",
+      rating: "★★★★★",
+      hover: "Quick-service eatery specializing in roast beef sandwiches and curly fries."
+    }
+  ];
+
+  // Function to create HTML for a restaurant
+  function createRestaurantHTML(restaurant) {
+    return `
+      <div class="restaurant">
+        <div class="restaurant-image">
+          <a href="restaurants.html">
+            <img src="${restaurant.img}" alt="" />
+          </a>
+        </div>
+        <div class="restaurant-info">
+          ${restaurant.info}
+          <p>${restaurant.description}</p>
+        </div>
+        <div class="restaurant-rating">${restaurant.rating}</div>
+        <div class="restaurant-hover" style="display: none;">
+            <img src="${restaurant.img}" alt="" style="width:50px">
+          ${restaurant.info}
+          <div>${restaurant.rating}</div>
+          <div>${restaurant.hover}</div>
+        </div>
+      </div>
+    `;
+  }
+  
+  // Function to display featured restaurants
+  let numOfNewItemsDisplaied = 0;
+  function displayFeaturedRestaurants() {
+    const defaultNumOfItems = 2;
+    for(; numOfNewItemsDisplaied < defaultNumOfItems; numOfNewItemsDisplaied++){
+      const restaurantHTML = createRestaurantHTML(newResturants[numOfNewItemsDisplaied]);
+      newContainer.innerHTML += restaurantHTML;
+    }
+  }
+
+  // Call the function to display featured restaurants
+  displayFeaturedRestaurants();
+
+  attachHoverListeners();
+  // Show additional details on hover
+  function attachHoverListeners(){
+    const restaurants = document.querySelectorAll(".restaurant");
+    restaurants.forEach((restaurant) => {
+      restaurant.addEventListener("mouseover", () => {
+        const hoverDiv = restaurant.querySelector(".restaurant-hover");
+        hoverDiv.style.display = "block";
+      });
+  
+      restaurant.addEventListener("mouseout", () => {
+        const hoverDiv = restaurant.querySelector(".restaurant-hover");
+        hoverDiv.style.display = "none";
+      });
+    });
+  }
+
+  // Load more featured restaurants
+  function displayMoreNewRestaurants() {
+    for( let i = numOfNewItemsDisplaied ; i < newResturants.length; i++){
+      const restaurantHTML = createRestaurantHTML(newResturants[i]);
+      newContainer.innerHTML += restaurantHTML;
+    }
+    attachHoverListeners(); // Attach hover event listeners to the newly added restaurants
+  }
+  // Event listener for "More" button
+  const newMoreButton = document.getElementById("newMore");
+  newMoreButton.addEventListener("click", displayMoreNewRestaurants);
+
+</script>

@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cart Page| YumYumGo</title>
+<link rel="stylesheet" href="styles.css">
+
+<style>
+
+body {
+  background-color: #fbfbe3; 
+
+}
+main {
+    width: 80%;
+    margin: 40px auto;
+    background-color: #fbfbe3;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    color: white;
+    text-align: center;
+    background-color: #6c4675;
+}
+
+#cart-items {
+    margin-top: 20px;
+}
+
+
+
+button:hover {
+    opacity: 0.8;
+}
+
+main p {
+    text-align: center;
+}
+
+.remove-item {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.remove-item img {
+    width: 20px;
+    height: auto;
+}
+
+#checkout, #clear-cart {
+    background: #6c4675;
+    color: #e5c6bd;
+    padding: 10px 20px;
+    text-transform: uppercase;
+    cursor: pointer;
+    border: none; 
+margin-left: 13rem;
+width: 15rem;
+}
+
+
+.cart-item-labels{
+    display: grid;
+    grid-template-columns: 150px 2fr 1fr 1fr 1fr;
+    gap: 1rem;
+    align-items: center;
+    padding: 1rem;
+    text-align: center;
+    background-color: #f8f8f8;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.cart-item-labels {
+    text-align: center;
+    background-color: #f8f8f8;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    
+}
+
+.cart-item {
+    border: 1px solid #e0e0e0;
+    margin-bottom: 1rem;
+
+}
+
+.item-image {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    justify-self: center;
+}
+
+.item-name, .restaurant-name, .item-price, .item-quantity, .item-total {
+    padding: 0.5rem; 
+    margin-right: 30%;
+    justify-self: center;
+ 
+}
+
+
+.item-quantity input {
+    width: 50px; 
+ 
+    margin: 0; 
+    text-align: center;
+}
+
+
+.remove-item {
+    justify-self: center;
+    grid-column: -1; 
+}
+
+
+
+.cart-item {
+  display: grid;
+  grid-template-columns: 100px 2fr 1fr 1fr 1fr 40px;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  padding: 1rem;
+  border: 1px solid #e0e0e0;
+}
+
+.item-image {
+  width: 100px;
+  height: 100px; 
+}
+
+.item-description {
+  display: flex;
+  flex-direction: column;
+}
+
+.item-name {
+  font-weight: bold;
+}
+
+
+
+.item-quantity input {
+  width: 50px; 
+  text-align: center;
+}
+
+.remove-item {
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.item-name div{
+  color: #e5c6bd;
+  font-weight:lighter;
+}
+
+
+.breadcrumbs{
+margin-top: 1rem;
+
+}
+
+.total-label{
+  margin-left: 60rem;
+}
+
+.dark-theme main{
+  background-color: #1f0823;
+}
+.dark-theme h1{
+background-color:#eea6a9;
+
+}
+
+</style>
+
+</head>
+<header>
+  <div id="logo"><img src="logo4.jpg" alt="YumYumGo"></div>
+  <nav id="nav-menu">
+    <a href="index.html" accesskey="h"> Home</a>
+    <a href="owner-dashboard.html" accesskey="o">Owner's Dashboard</a>
+    <a href="customer-dashboard.html" accesskey="c">Customer's Dashboard</a>
+    <a href="restaurants.html" accesskey="r">Restaurants</a>
+  </nav>
+</header>
+<body>
+  <div class="breadcrumbs-container">
+    <ul class="breadcrumbs">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="restaurants.html">Restaurants</a></li>
+      <li class="current">Cart</li>
+    </ul>
+  </div>
+    <main>
+      <h1>Your Cart</h1>
+
+      
+      <div class="cart-item-labels">
+          <span>Item</span>
+          <span></span>
+          <span>Price</span>
+          <span>Quantity</span>
+          <span>Total</span>
+      </div>
+
+  
+  
+     <div id="cart-items">
+
+      <!-- <div class="cart-item">
+        <img src="meal1.jpg" alt="Meal 1" class="item-image">
+        <span class="item-name">Chicken herfy compo<br><div>Herfy</div></span>
+        <span></span>
+        <span class="item-price">SR10.99</span>
+        <input type="number" class="item-quantity" value="1">
+        <span class="item-total">SR10.99</span>
+        <button class="remove-item"><img src="trashicon.jpg" alt="Remove Item"></button>
+    </div>
+
+    <div class="cart-item">
+      <img src="meal3.png" alt="Meal 1" class="item-image">
+      <span class="item-name">Chicken nuggets<br><div>Burger king</div></span>
+      <span></span>
+      <span class="item-price">SR12</span>
+      <input type="number" class="item-quantity" value="1">
+      <span class="item-total">SR24</span>
+      <button class="remove-item"><img src="trashicon.jpg" alt="Remove Item"></button>
+  </div>
+
+  <div class="cart-item">
+    <img src="meal2.png" alt="Meal 1" class="item-image">
+    <span class="item-name">Spice chicken burger<br><DIV>Burger king</DIV></span>
+    <span></span>
+    <span class="item-price">SR15.99</span>
+    <input type="number" class="item-quantity" value="1">
+    <span class="item-total">SR15.99</span>
+    <button class="remove-item"><img src="trashicon.jpg" alt="Remove Item"></button>
+</div> -->
+</div>
+
+
+
+<div class="total-label">Grand Total: SR0.00</div>
+<br>
+<div class="buttons">
+  <button id="clear-cart">Clear The Cart</button>
+
+  <button id="checkout">Checkout</button></div></a>
+
+
+</main>
+
+  
+  
+  
+    <footer>
+    <p>&copy; 2024 YumYumGo</p>
+    <p>Phone: 123-456-7890</p>
+    <p>Email: info@YumYumGo.com</p>
+    <div id="social-media-icons">
+    
+  
+      <div> <button id="theme-toggle">
+        <img src="Vector (5).png" alt="Switch Theme">
+      </button>
+        <img src="Vector.png" alt="Instagram APP">
+      <img src="linkedin-3-xxl.png" alt="LinkedIn APP">
+      <img src="Vector (1).png" alt="X APP">
+      </div>
+  
+    </div>
+  </footer>
+  <script src="javaScript.js"></script>
+</body>
+</html>

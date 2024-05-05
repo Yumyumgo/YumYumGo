@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Owner dashboard| YumYumGo</title>
+<link rel="stylesheet" href="styles.css">
+<style>
+
+body {
+  background-color: #fbfbe3; 
+
+}
+.sort-section {
+  display: flex;
+  justify-content: flex-end; 
+  padding-right: 20px; 
+  
+  background-color: #6c4675;
+  padding: 20px 0; 
+  color: white;
+}
+.sort-container h3 {
+  text-align: center;
+    color:#e5c6bd; 
+    margin-top: 0; 
+}
+.sort-container {
+  margin: 0 auto; 
+}
+
+#sort-options {
+  background-color: #e5c6bd; 
+  color:#5c3c64; 
+  border: 1px solid #fff; 
+  padding: 10px 20px; 
+  font-size: 1em; 
+  border-radius: 5px; 
+}
+
+#sort-options option {
+  background-color:beige; 
+}
+
+
+.category-container {
+  margin-bottom: 2rem; 
+}
+
+.section-title {
+  text-align: center; 
+  width: 100%; 
+  display: block; 
+  margin-top: 20px; 
+  margin-bottom: 20px; 
+  font-size:  2.1875em;
+  color:#5c3c64;
+}
+
+
+.meal-container {
+  display: flex;
+  justify-content: flex-start; 
+  align-items: flex-start;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  gap: 20px; 
+  padding: 10px 0; 
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.meal-item {
+  color: #33013f;
+
+ 
+  box-sizing: border-box;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  flex: 0 0 auto; 
+      width: 300px;
+      margin-right: 1em; 
+      border: 1px solid #ddd; 
+      padding: 1em; 
+      background-color: blanchedalmond; 
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    margin-bottom: 1rem;
+}
+
+
+
+.meal-item img {
+
+  width: 100%; 
+  height: 200px; 
+  object-fit: cover; 
+  border: 2px solid #5c3c64; 
+  border-radius: 8px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    margin-bottom: 10px; 
+   
+}
+
+
+
+button {
+          background-color: #6c4675;
+            color: #e5c6bd;
+            border:solid #59375a;
+            padding: 10px 20px;
+            margin: 0 10px; 
+            cursor: pointer;
+          width: 15rem;
+        }
+.buttons{
+    margin-left: 33%;
+    margin-top: 3rem;
+ }
+        button:hover {
+            background-color: #59375a;
+        }
+</style>
+
+</head>
+<body>
+<header>
+
+
+
+  <div id="logo"><img src="logo4.jpg" alt="YumYumGo"></div>
+  <nav id="nav-menu">
+    
+    <a href="index.html" accesskey="h">Home</a>
+    <a href="owner-dashboard.html "accesskey="o">Owner's Dashboard</a>
+    <a href="customer-dashboard.html"accesskey="c">Customer's Dashboard</a>
+    <a href="restaurants.html"accesskey="r">Restaurants</a>
+ 
+  </nav>
+  
+</header>
+<div class="breadcrumbs-container">
+  <ul class="breadcrumbs">
+    <li><a href="index.html">Home</a></li>
+    <li class="current">Owner's Dashboard</li>
+  </ul>
+</div>
+<div class="buttons">
+  <a href="make offer.html">
+    <button type="button" >Mange offers</button></a>
+    <a href="cuisine.html">
+    <button type="button">Add new cuisine</button></a>
+</div>
+
+<section>
+<h2 class="section-title">Meals</h2>
+  <div id="displayMeals" class="Appetizers meal-container">
+    <!-- <div class="meal-item">
+      <img src="b921e8fd-c64e-44d8-9110-157ca5c0cea3.jpg" alt="">
+      <h3>rice porridge </h3>
+      <p> 
+        A creamy bowl of rice porridge adorned with tender shrimp, fresh green onions, and a touch of red chili for a hint of spice, served in a sleek white bowl. A hearty and savory choice for seafood lovers.</p>
+      <p class="calorie-info">Calories: 650 kcal</p>
+      <p class="price-info">19.99SR</p>
+    </div>
+    <div class="meal-item">
+      <img src="09a536ad-002f-4752-ad1c-97490ca8778b.jpg" alt="">
+      <h3>Caesar salad</h3>
+      <p> A classic Caesar salad with crisp romaine lettuce, shredded Parmesan cheese, juicy strips of grilled chicken, and golden-brown croutons. A light and refreshing choice.
+
+
+      </p>
+      
+      <p class="calorie-info">Calories: 300 kcal</p>
+      <p class="price-info">20.99SR</p>
+      <br>
+    </div>
+    <div class="meal-item">
+      <img src="94-949210_nachos-and-salsa-png-png-transparent-download-appetizers.png" alt="Nachos">
+      <h3>Nachos</h3>
+      <p> A crunchy, colorful delight. Our tortilla chips come smothered in melted cheeses, topped with jalapeños, olives, tomatoes, and onions, and served with guacamole, salsa, and sour cream for dipping.</p>
+      <p class="calorie-info">Calories: 650 kcal</p>
+      <p class="price-info">19.99SR</p>
+
+    </div>
+    <div class="meal-item">
+        <img src="crispy-mozzarella-sticks-136463-1.jpg" alt="mozzarella sticks">
+        <h3>mozzarella sticks</h3>
+          <p>Crispy on the outside, gooey on the inside. These golden sticks are coated in herbed breadcrumbs and served with our rich marinara sauce—a cheesy treat that’s hard to beat.</p>
+          <p class="calorie-info">Calories: 500 kcal</p>
+      <p class="price-info">17SR</p>
+      <br>
+    </div>
+      
+
+    <div class="meal-item">
+      <img src="mcdonalds-Chicken-McNuggets-6-pieces-2_1-3-product-tile-desktop.jpg" alt="chicken nuggets">
+      <h3>chicken nuggets</h3>
+      <p> Perfectly seasoned and breaded chicken breast pieces, fried to a crispy golden perfection. Enjoy with your choice of honey mustard, barbecue, or ranch dipping sauces.</p>
+      <p class="calorie-info">Calories: 350kcal</p>
+      <p class="price-info">10SR</p>
+      <br>
+    </div> -->
+
+
+  </div>
+</section>
+
+
+<!-- 
+<section id="main-course-section">
+  <h2 class="section-title">Main Course</h2>
+  <div class="Main-Course meal-container">
+
+<div class="meal-item">
+    <img src="e11cabad-acd2-4748-b52f-adfea207a989.jpg" alt="">
+    <h3>steak</h3>
+        <p>A juicy, medium-rare ribeye steak with melting herbed butter, seasoned with c
+          oarse salt, garnished with rosemary, on a wooden board.</p>
+        <p class="calorie-info">Calories: 1200 kcal</p>
+    <p class="price-info">50SR</p>
+   <br>  <br>
+  </div>
+
+  <div class="meal-item">
+    <img src="26d8afcc-de37-4dfa-af34-1b26e137840b.jpg" alt="">
+    <h3>sushi</h3>
+        <p>
+          A selection of sushi on a slate tray: vibrant salmon nigiri atop sticky rice and maki rolls filled with crisp vegetables and tender fish, paired with wasabi and ginger</p>
+        <p class="calorie-info">Calories: 1200 kcal</p>
+    <p class="price-info">30SR</p>
+    <br>
+  </div>
+
+
+  <div class="meal-item">
+    <img src="Hamburger-and-french-fries-paper-box.webp" alt="Hamburger-and-french-fries">
+    <h3>Burger</h3>
+        <p>A juicy beef patty with cheddar, lettuce, tomato, onion, and pickles on a toasted brioche bun, finished with our signature sauce. Pure burger bliss in every bite.</p>
+        <p class="calorie-info">Calories: 1200 kcal</p>
+    <p class="price-info">30SR</p>
+    <br>
+  </div>
+
+
+    <div class="meal-item">
+      <img src="FAW-recipes-pasta-sausage-basil-and-mustard-hero-06-cfd1c0a2989e474ea7e574a38182bbee.jpeg" alt="Pasta">
+      <h3>Pasta</h3>
+      <p>pasta coated in a rich, savory marinara sauce, sprinkled with freshly grated Parmesan and basil leaves. A simple yet profoundly satisfying dish that comforts the soul.</p>
+      <p class="calorie-info">Calories: 645 kcal</p>
+  <p class="price-info">25SR</p>
+  <br>
+</div>
+
+  <div class="meal-item">
+    <img src="__opt__aboutcom__coeus__resources__content_migration__simply_recipes__uploads__2019__09__easy-pepperoni-pizza-lead-3-1024x682-583b275444104ef189d693a64df625da.jpg" alt="Pizza">
+    <h3>Pizza</h3>
+    <p>Our hand-tossed crust topped with zesty tomato sauce, mozzarella, pepperoni, bell peppers, onions, mushrooms, and olives, baked to golden perfection. A feast for the senses.</p>
+    <p class="calorie-info">Calories: 1500 kcal</p>
+    <p class="price-info">35SR</p>
+
+</div>
+  </div>
+</section>
+
+
+<section id="desserts-section">
+  <h2 class="section-title">Desserts</h2>
+  <div class="Desserts meal-container">
+ <div class="meal-item">
+    <img src="ef73e39d-8cc3-4399-b618-8054f9d208eb.jpg" alt="Ice cream">
+    <h3>Ice cream</h3>
+        <p>Indulge in scoops of creamy, smooth ice cream, available in a variety of classic and innovative flavors to satisfy your sweet tooth.</p>
+        <p class="calorie-info">Calories: 120kcal</p>
+    <p class="price-info">5SR</p>
+ <br><br>
+  </div>
+
+    <div class="meal-item">
+      <img src="23def92d-43a4-4fa3-aa29-6ee51a0ac0bc.jpg" alt="">
+      <h3>fruit tart</h3>
+      <p>
+        A fresh fruit tart with a golden, flaky crust, generously topped with an assortment of ripe berries—strawberries, blueberries, and a plump blackberry—alongside succulent slices of kiwi and peach.</p>
+      <p class="calorie-info">Calories: 300kcal</p>
+  <p class="price-info">15SR</p>
+ 
+
+</div>
+
+
+<div class="meal-item">
+  <img src="9ed9ee29-2757-4286-a076-dc6a29c62d83.jpg" alt="">
+  <h3>cheesecakes</h3>
+  <p>mini cheesecakes with a crisp, buttery base, topped with a smooth, rich cream cheese layer. Each is garnished with a fresh strawberry slice and a sprig of mint.</p>
+  <p class="calorie-info">Calories: 300kcal</p>
+<p class="price-info">15SR</p>
+<br>
+
+</div>
+
+
+<div class="meal-item">
+  <img src="bf1c4890-573a-4bd0-92a0-dd102ce1c97c.jpg" alt="Cookies">
+  <h3>COOKIES</h3>
+  <p>Bite into our freshly baked cookies, brimming with chocolate chips and a hint of vanilla. A perfect blend of crispy edges and a chewy center.</p>
+  <p class="calorie-info">Calories: 300kcal</p>
+<p class="price-info">15SR</p>
+
+<br><br>
+</div>
+
+
+<div class="meal-item">
+  <img src="66d3932b-9bfc-437b-bed3-f1bff7a3ae59.jpg" alt="Brownies">
+  <h3>Brownies</h3>
+    <p> Enjoy our rich, chocolatey brownies with a dense, fudgy core and crackly top. Each bite is a decadent delight.    </p>
+    <p class="calorie-info">Calories: 350kcal</p>
+<p class="price-info">10SR</p>
+<br><br><br>
+  </div>
+  </div>
+</section> -->
+</div>
+<footer>
+  <p>&copy; 2024 YumYumGo</p>
+  <p>Phone: 123-456-7890</p>
+  <p>Email: info@YumYumGo.com</p>
+  <div id="social-media-icons">
+  
+    <div> <button id="theme-toggle">
+      <img src="Vector (5).png" alt="Switch Theme">
+    </button>
+    <a href="https://www.instagram.com/yum.yumgo?igsh=ajQ1N3NqcWxuMXhy&utm_source=qr"><img   src="Vector.png" alt="Instagram APP" /></a>
+          <a href="https://www.linkedin.com"><img src="linkedin-3-xxl.png" alt="LinkedIn APP" /></a>
+          <a href="https://twitter.com/i/flow/login"><img src="Vector (1).png" alt="X APP" /></a>
+        </div>
+
+  </div>
+</footer>
+
+<script src="javaScript.js"></script>
+</body>
+</html>
+
+<script>
+  const cuisines = JSON.parse(localStorage.getItem("cuisines"));
+  const cuisinesContainer = document.getElementById("displayMeals");
+  cuisines.forEach((cuisine) => {
+    cuisinesContainer.innerHTML += `
+    <div class="meal-item">
+      <img src="${cuisine.photo}" alt="">
+      <h3>${cuisine.name}</h3>
+      <p>${cuisine.description}</p>
+      <p class="calorie-info">Calories: ${cuisine.calories} kcal</p>
+      <p class="price-info">${cuisine.price}SR</p>
+    </div>
+    `;
+  })
+</script>
+
